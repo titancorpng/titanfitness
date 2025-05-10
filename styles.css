@@ -41,7 +41,7 @@ section {
 
 /* Header Styles */
 .header {
-  color: #000000; 
+  color: #ffffff; /* Text color */
   padding: 1rem 1rem;
   position: sticky;
   top: 0; /* Ensures it sticks to the top */
@@ -51,14 +51,15 @@ section {
   grid-template-columns: 1fr auto;
   align-items: center;
   transition: background-color 0.3s ease;
+  background-color: #000; /* Header background color */
   width: 100%; /* Ensure header spans the entire width */
 }
 
 header .logo img {
   height: auto;
   width: auto;
-  max-height: 70px;
-  max-width: 200px;
+  max-height: 70px; /* Default max height for logo */
+  max-width: 200px; /* Default max width for logo */
   object-fit: contain;
   display: block;
   transform: scale(1.0);
@@ -78,6 +79,65 @@ header .navbar a {
 
 header .navbar a:hover {
   color: var(--theme-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* For Tablets */
+  .header {
+    height: 6rem; /* Reduce header height on tablet */
+  }
+
+  header .logo img {
+    max-height: 60px; /* Slightly smaller logo on tablet */
+    max-width: 180px;
+  }
+
+  header .navbar a {
+    font-size: 1.5rem; /* Adjust navbar font size for tablet */
+    margin-left: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* For Mobile */
+  .header {
+    height: 5rem; /* Reduce header height for mobile */
+  }
+
+  header .logo img {
+    max-height: 50px; /* Smaller logo for mobile */
+    max-width: 150px;
+  }
+
+  header .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Stack the navbar items */
+    margin-top: 1rem;
+  }
+
+  header .navbar a {
+    font-size: 1.3rem; /* Adjust font size for smaller screens */
+    margin-left: 0;
+    margin-top: 0.5rem; /* Add space between links */
+  }
+}
+
+@media (max-width: 480px) {
+  /* For Very Small Screens */
+  .header {
+    height: 4rem; /* Further reduce header height */
+  }
+
+  header .logo img {
+    max-height: 40px; /* Smaller logo on very small screens */
+    max-width: 120px;
+  }
+
+  header .navbar a {
+    font-size: 1.2rem; /* Further adjust navbar font size */
+  }
 }
 
 /* Mobile Menu Icon */
@@ -241,19 +301,19 @@ header .navbar a:hover {
   width: 6rem;
   line-height: 6rem;
   border-radius: 50%;
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* Use rem for scaling */
   background: var(--theme-color);
   color: #fff;
 }
 
 .service .box-container .box h3 {
-  font-size: 2rem;
+  font-size: 2rem; /* Use rem for scaling */
   color: #fff;
   padding: 1rem 0;
 }
 
 .service .box-container .box p {
-  font-size: 1.4rem;
+  font-size: 1.4rem; /* Use rem for scaling */
   color: #eee;
   line-height: 1.8;
 }
@@ -262,6 +322,48 @@ header .navbar a:hover {
   transform: scale(1.05);
 }
 
+/* Responsive Font Sizes for smaller screens */
+@media (max-width: 1024px) {
+  .service .box-container .box i {
+    font-size: 2rem; /* Adjust icon size */
+  }
+
+  .service .box-container .box h3 {
+    font-size: 1.8rem; /* Adjust heading size */
+  }
+
+  .service .box-container .box p {
+    font-size: 1.2rem; /* Adjust paragraph size */
+  }
+}
+
+@media (max-width: 768px) {
+  .service .box-container .box i {
+    font-size: 1.8rem; /* Smaller icon size on mobile */
+  }
+
+  .service .box-container .box h3 {
+    font-size: 1.6rem; /* Smaller heading size */
+  }
+
+  .service .box-container .box p {
+    font-size: 1.1rem; /* Smaller paragraph size */
+  }
+}
+
+@media (max-width: 480px) {
+  .service .box-container .box i {
+    font-size: 1.6rem; /* Further smaller icon size */
+  }
+
+  .service .box-container .box h3 {
+    font-size: 1.4rem; /* Further smaller heading size */
+  }
+
+  .service .box-container .box p {
+    font-size: 1rem; /* Further smaller paragraph size */
+  }
+}
 
 /* General Styles for About Section */
 .about .row {
@@ -367,13 +469,13 @@ header .navbar a:hover {
   background: var(--theme-color);
   color: #fff;
   padding: 1.5rem 0;
-  font-size: 2rem;
+  font-size: 2rem; /* Use rem for scalability */
 }
 
 .price .box-container .box .amount {
   color: #fff;
   padding-top: 2rem;
-  font-size: 4rem;
+  font-size: 4rem; /* Use rem for scalability */
 }
 
 .price .box-container .box ul {
@@ -382,7 +484,7 @@ header .navbar a:hover {
 }
 
 .price .box-container .box ul li {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Use rem for scalability */
   color: #eee;
   padding: 1rem 0;
 }
@@ -390,6 +492,49 @@ header .navbar a:hover {
 .price .box-container .box ul li i {
   color: var(--theme-color);
   padding-right: 0.5rem;
+}
+
+/* Responsive Font Sizes for smaller screens */
+@media (max-width: 1024px) {
+  .price .box-container .box .title {
+    font-size: 1.8rem; /* Adjust title size for tablets */
+  }
+
+  .price .box-container .box .amount {
+    font-size: 3.5rem; /* Adjust amount size for tablets */
+  }
+
+  .price .box-container .box ul li {
+    font-size: 1.4rem; /* Adjust list item font size for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .price .box-container .box .title {
+    font-size: 1.6rem; /* Adjust title size for mobile */
+  }
+
+  .price .box-container .box .amount {
+    font-size: 3rem; /* Adjust amount size for mobile */
+  }
+
+  .price .box-container .box ul li {
+    font-size: 1.3rem; /* Adjust list item font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .price .box-container .box .title {
+    font-size: 1.4rem; /* Further adjust title size for small screens */
+  }
+
+  .price .box-container .box .amount {
+    font-size: 2.5rem; /* Further adjust amount size for small screens */
+  }
+
+  .price .box-container .box ul li {
+    font-size: 1.2rem; /* Further adjust list item font size for small screens */
+  }
 }
 
 /* Checkout Button Styles */
