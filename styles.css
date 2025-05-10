@@ -149,52 +149,51 @@ header .navbar a:hover {
   }
 }
 
-/* Carousel Container */
 .carousel {
-  overflow: hidden; /* Hide overflowing text */
-  width: 100vw; /* Full viewport width */
-  height: 50px; /* Adjust height as needed */
-  background-color: transparent; /* Transparent background */
+  overflow: hidden;
+  width: 100vw;
+  height: 50px;
+  background-color: transparent;
   position: relative;
   display: flex;
   align-items: center;
-  border-top: 4px double white; /* Double line border above */
-  border-bottom: 4px double white; /* Double line border below */
-  margin: 0; /* Remove any vertical spacing */
-  padding: 0; /* Remove internal padding */
-
-  /* Extend Borders to the Left */
-  margin-left: 0px; /* Adjust to extend the borders to the left */
-  padding-left: 0px; /* Prevent text content from shifting left */
+  border-top: 4px double white;
+  border-bottom: 4px double white;
+  margin: 0;
+  padding: 0;
+  margin-left: 0px;
+  padding-left: 0px;
 }
 
-/* Track for Sliding Text */
 .carousel-track {
   display: flex;
-  animation: slide 30s linear infinite; /* Sliding animation */
-  /* Adjust the width of the track */
-  width: calc(200%); /* Ensure the track is twice as wide for seamless effect */
+  animation: slide 30s linear infinite;
+  width: calc(200%);
   scroll-behavior: smooth;
 }
 
-/* Individual Carousel Items */
 .carousel-item {
-  flex: 0 0 auto; /* Allow items to shrink to fit content */
+  flex: 0 0 auto;
   text-align: center;
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 0 20px; /* Adjust horizontal padding for spacing between words */
+  padding: 0 20px;
   scroll-behavior: smooth;
 }
 
-/* Animation Keyframes */
 @keyframes slide {
   0% {
-      transform: translateX(0%);
+    transform: translateX(0%);
   }
   100% {
-      transform: translateX(-50%); /* Slide halfway (first cycle ends as second begins) */
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 40px;
   }
 }
 
