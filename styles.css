@@ -18,18 +18,31 @@
 }
 
 html {
-  font-size: 62.5%;
-  overflow-x: hidden;
+  font-size: 62.5%; /* Base font size for rem scaling */
+  overflow-x: hidden; /* Prevent horizontal overflow */
   scroll-padding-top: 7rem;
   scroll-behavior: smooth;
+  width: 100%; /* Ensure the full page width is used */
 }
 
 body {
   background: linear-gradient(45deg, #575757, #3e3e3e, #000000);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%; /* Ensure the body takes full width */
 }
 
 section {
-  padding: 2rem 9%;
+  padding: 2rem 9%; /* Adjust section padding */
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%; /* Adjust font size for smaller screens */
+  }
+
+  section {
+    padding: 2rem 5%; /* Adjust section padding for mobile */
+  }
 }
 
 .header {
