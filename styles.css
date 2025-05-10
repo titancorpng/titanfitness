@@ -264,6 +264,12 @@ header .navbar a:hover {
   }
 }
 
+@media (max-width: 480px) {
+  /* For Very Small Screens */
+  .carousel {
+    height: 80px;
+  }
+
 .home .home-slider .swiper-slide {
   overflow: hidden;
   border-radius: 0.5rem;
