@@ -19,18 +19,20 @@
 
 html {
   font-size: 62.5%;
-  overflow-x: hidden;
   scroll-padding-top: 7rem;
   scroll-behavior: smooth;
 }
 
 body {
   background: linear-gradient(45deg, #575757, #3e3e3e, #000000);
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 section {
   padding: 2rem 9%;
-}/* Header Styles */
+}
+
+/* Header Styles */
 .header {
   position: fixed;
   top: 0;
