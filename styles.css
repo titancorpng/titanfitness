@@ -18,19 +18,19 @@
 }
 
 html {
-  font-size: 62.5%; /* Base font size for rem scaling */
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  font-size: 62.5%;
+  overflow-x: hidden;
   scroll-padding-top: 7rem;
   scroll-behavior: smooth;
-  width: 100%; /* Ensure the full page width is used */
 }
 
-/* media queries  */
+body {
+  background: linear-gradient(45deg, #575757, #3e3e3e, #000000);
+}
 
-@media (max-width: 991px) {
-  html {
-    font-size: 55%;
-  }
+section {
+  padding: 2rem 9%;
+}
 
 .header {
   position: fixed;
@@ -45,26 +45,34 @@ html {
   padding: 0.2rem 5%;
 }
 
-.header .logo img {
-  height: auto;
-  width: auto;
-  max-height: 70px;
-  max-width: 200px;
-  object-fit: contain;
-  display: block;
-  transform: scale(1.0);
-  transform-origin: center;
+header .logo img {
+  height: auto; /* Maintain the original height */
+  width: auto; /* Maintain the original width */
+  max-height: 70px; /* Default maximum height */
+  max-width: 200px; /* Default maximum width */
+  object-fit: contain; /* Ensure the image keeps its aspect ratio */
+  display: block; /* Proper alignment */
+  transform: scale(1.0); /* Shrinks the image by 40% */
+  transform-origin: center; /* Scales the image from its center */
 }
 
-.header .logo {
-  padding: 10px;
+/* Add optional padding or margins if needed for spacing */
+header .logo {
+  padding: 10px; /* Adjust padding around the logo */
+}
+
+/* Optional: Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  header .logo img {
+    max-height: 50px; /* Smaller logo for mobile */
+    max-width: 150px;
+  }
 }
 
 .header .navbar a {
   font-size: 1.7rem;
   color: #fff;
   margin-left: 2rem;
-  text-decoration: none;
 }
 
 .header .navbar a:hover {
@@ -76,134 +84,6 @@ html {
   color: #fff;
   cursor: pointer;
   display: none;
-}
-
-/* Mobile View (Dropdown) */
-@media (max-width: 768px) {
-  #menu-bars {
-    display: initial;
-  }
-
-  .header .navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    border-top: 0.1rem solid #222;
-    background: #333;
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 0.3s ease-in-out;
-    flex-direction: column;
-  }
-
-  .header .navbar.active {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
-
-  .header .navbar a {
-    display: flex;
-    background: #222;
-    border-radius: 0.5rem;
-    padding: 1.3rem;
-    margin: 1.3rem;
-    font-size: 2rem;
-  }
-
-  .fa-times {
-    transform: rotate(180deg);
-  }
-}
-
-/* Desktop View (Inline Links) */
-@media (min-width: 769px) {
-  .header .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background: none;
-    position: static;
-    clip-path: none;
-  }
-
-  .header .navbar a {
-    display: inline-block;
-    padding: 0;
-    margin-left: 2rem;
-    font-size: 1.7rem;
-    background: none;
-  }
-
-  #menu-bars {
-    display: none;
-  }
-}
-
-/* Optional spacing */
-.header {
-  padding: 1.5rem 2rem;
-}
-
-section {
-  padding: 2rem;
-}
-
-/* Extra responsiveness for very small screens */
-@media (max-width: 450px) {
-  html {
-    font-size: 50%;
-  }
-
-  .home .home-slider .swiper-slide {
-    width: 27rem;
-  }
-
-  .contact form .inputBox input {
-    width: 100%;
-  }
-}
-
-@media (max-width: 450px) {
-  html {
-    font-size: 50%;
-  }
-
-  .home .home-slider .swiper-slide {
-    width: 27rem;
-  }
-
-  .contact form .inputBox input {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  #menu-bars {
-    display: initial;
-  }
-
-  .home .content h3 {
-    font-size: 4rem;
-  }
-}
-
-body {
-  background: linear-gradient(45deg, #575757, #3e3e3e, #000000);
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  width: 100%; /* Ensure the body takes full width */
-}
-
-section {
-  padding: 2rem 9%; /* Adjust section padding */
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 50%; /* Adjust font size for smaller screens */
-  }
-
-  section {
-    padding: 2rem 5%; /* Adjust section padding for mobile */
-  }
 }
 
 .home .content {
@@ -712,5 +592,72 @@ html::-webkit-scrollbar-thumb {
 @keyframes spin {
   0% {
     transform: rotate(360deg);
+  }
+}
+
+/* media queries  */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-bars {
+    display: initial;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: 0.1rem solid #222;
+    background: #333;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  .header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .fa-times {
+    transform: rotate(180deg);
+  }
+
+  .header .navbar a {
+    display: flex;
+    background: #222;
+    border-radius: 0.5rem;
+    padding: 1.3rem;
+    margin: 1.3rem;
+    font-size: 2rem;
+  }
+
+  .home .content h3 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .home .home-slider .swiper-slide {
+    width: 27rem;
+  }
+
+  .contact form .inputBox input {
+    width: 100%;
   }
 }
